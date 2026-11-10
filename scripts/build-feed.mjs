@@ -300,7 +300,7 @@ if (!skip.has("trends")) {
 const seen = new Set();
 const all = [];
 for (const i of [...manualItems, ...results.flat()]) {
-  const key = i.url.replace(/[?#].*$/, "").replace(/\/$/, "");
+  const key = i.url.replace(/#.*$/, "").replace(/\/$/, "");
   if (seen.has(key)) continue;
   seen.add(key);
   all.push(i);
