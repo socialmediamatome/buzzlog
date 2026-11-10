@@ -8,8 +8,17 @@
   --accent: #ff3d6e;
   --c-x: #15161c;
   --c-youtube: #e5162a;
-  --c-tiktok: #0fb8c4;
+  --c-tiktok: #0a9aa4;
   --c-instagram: #c1358f;
+  --c-niconico: #3b3b3b;
+  --c-bluesky: #0a6fe0;
+  --c-misskey: #5f8a00;
+  --c-mastodon: #5a4fd6;
+  --c-hatena: #0086b8;
+  --c-reddit: #e03d00;
+  --c-hackernews: #d65a00;
+  --c-zenn: #2a8fe0;
+  --c-web: #5d6170;
   --f-display: "Dela Gothic One", "Hiragino Kaku Gothic StdN", sans-serif;
   --f-body: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -24,6 +33,7 @@
     --line: #2c2f3a;
     --accent: #ff5c86;
     --c-x: #eceef4;
+    --c-niconico: #6b6b6b;
     color-scheme: dark;
   }
 }
@@ -74,6 +84,7 @@ body {
   gap: 8px;
   padding-block: 8px 12px;
 }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
 .chip {
   font: 500 13px var(--f-body);
   border: 1px solid var(--line);
@@ -119,10 +130,22 @@ main { padding-block: 20px 40px; }
   border-radius: 4px;
   letter-spacing: .04em;
 }
-.badge.x { background: var(--c-x); color: var(--bg); }
-.badge.youtube { background: var(--c-youtube); }
-.badge.tiktok { background: var(--c-tiktok); }
-.badge.instagram { background: var(--c-instagram); }
+.p-x { background: var(--c-x); color: var(--bg); }
+.p-youtube { background: var(--c-youtube); }
+.p-tiktok { background: var(--c-tiktok); }
+.p-instagram { background: var(--c-instagram); }
+.p-niconico { background: var(--c-niconico); }
+.p-bluesky { background: var(--c-bluesky); }
+.p-misskey { background: var(--c-misskey); }
+.p-mastodon { background: var(--c-mastodon); }
+.p-hatena { background: var(--c-hatena); }
+.p-reddit { background: var(--c-reddit); }
+.p-hackernews { background: var(--c-hackernews); }
+.p-zenn { background: var(--c-zenn); }
+.p-web { background: var(--c-web); }
+.tag { font-size: 11px; border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; }
+.author { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.src { flex-shrink: 0; }
 .src { margin-left: auto; font-family: var(--f-mono); }
 .src.auto { color: var(--accent); }
 
@@ -132,6 +155,12 @@ main { padding-block: 20px 40px; }
 .embed .ratio-9x16 { aspect-ratio: 9 / 16; height: auto; max-height: 740px; }
 .embed .ig { height: 620px; }
 .embed blockquote { margin: 0 auto; }
+.embed .bluesky-embed { width: 100%; margin: 0; padding: 0 12px; }
+.textbody { padding: 0 12px 4px; }
+.textbody p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.7; }
+.textbody img { display: block; width: 100%; margin-top: 10px; border-radius: 6px; }
+.thumb { display: block; width: 100%; aspect-ratio: 1.91 / 1; object-fit: cover; background: var(--line); }
+.desc { margin: 0 0 8px; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
 .placeholder { font-size: 13px; color: var(--muted); padding: 24px; text-align: center; }
 
 .card-body { padding: 10px 12px 12px; }
@@ -141,6 +170,13 @@ main { padding-block: 20px 40px; }
 .open { color: var(--accent); text-decoration: none; margin-left: auto; }
 .open:hover { text-decoration: underline; }
 
+.trends { display: flex; align-items: center; gap: 12px; padding-block: 14px 0; min-width: 0; }
+.trends-h { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--accent); white-space: nowrap; }
+.trends-list { display: flex; gap: 8px; margin: 0; padding: 0 0 4px; list-style: none; overflow-x: auto; min-width: 0; scrollbar-width: thin; }
+.trends-list li { display: flex; align-items: baseline; gap: 6px; flex-shrink: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+.trends-list a { color: var(--ink); text-decoration: none; font-weight: 500; }
+.trends-list a:hover { text-decoration: underline; }
+.trends-list span { font: 11px var(--f-mono); color: var(--muted); }
 .empty { text-align: center; color: var(--muted); padding: 48px 0; }
 .foot { color: var(--muted); font-size: 12px; padding-block: 16px 32px; border-top: 1px solid var(--line); }
 

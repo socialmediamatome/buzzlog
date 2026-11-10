@@ -2,7 +2,9 @@
 
 X・YouTube・TikTok・Instagram でバズっている投稿や動画を、1つのページにまとめて表示するサイトです。
 
-- **自動取得**: YouTube の急上昇（日本）を 3 時間ごとに自動で取り込みます
+- **自動取得（3時間ごと・無料）**: YouTube 急上昇（総合・音楽・ゲーム）／Bluesky の話題／Misskey.io ハイライト／Mastodon の話題／ニコニコ動画 24時間ランキング／はてなブックマーク人気エントリー／Reddit／Hacker News／Zenn トレンド／Google 急上昇ワード
+  - YouTube 以外はキー不要です。どれかが失敗しても他は表示されます（Reddit は GitHub のサーバーから拒否されることがあります）
+  - 止めたいものは workflow の env に `SKIP_SOURCES: reddit,mastodon` のように書きます
 - **手動追加**: X / TikTok / Instagram（と YouTube）は、`data/manual.json` に URL を足すだけで載ります
 - 表示は各サービス公式の埋め込みを使っています（画像や動画をコピーしていません）
 - サーバー不要。GitHub Pages で無料公開できます
