@@ -1,16 +1,10 @@
 {
   "items": [
     {
-      "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
-      "title": "YouTube に最初に投稿された動画",
-      "note": "サンプル。自分のピックアップに差し替えてください",
-      "addedAt": "2026-11-11T09:00:00+09:00"
-    },
-    {
-      "url": "https://x.com/jack/status/20",
-      "title": "X（旧Twitter）の最初の投稿",
-      "note": "サンプル。自分のピックアップに差し替えてください",
-      "addedAt": "2026-11-11T09:00:00+09:00"
+      "url": "https://x.com/nogizaka46/status/2120171915528777922",
+      "title": "乃木坂46 公式の投稿",
+      "note": "",
+      "addedAt": "2026-11-11T01:40:00+09:00"
     }
   ]
 }
