@@ -1,0 +1,19 @@
+{
+  "updatedAt": "2026-11-10T15:24:19.619Z",
+  "items": [
+    {
+      "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+      "title": "YouTube に最初に投稿された動画",
+      "note": "サンプル。自分のピックアップに差し替えてください",
+      "addedAt": "2026-11-11T09:00:00+09:00",
+      "source": "manual"
+    },
+    {
+      "url": "https://x.com/jack/status/20",
+      "title": "X（旧Twitter）の最初の投稿",
+      "note": "サンプル。自分のピックアップに差し替えてください",
+      "addedAt": "2026-11-11T09:00:00+09:00",
+      "source": "manual"
+    }
+  ]
+}

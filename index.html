@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>バズログ</title>
+  <meta name="description" content="X・YouTube・TikTok・Instagramでバズっている投稿と動画をひとつにまとめたサイト">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="logo" href="./">バズ<span>ログ</span></a>
+      <p class="tagline">いま話題の投稿と動画を、媒体をまたいでひとまとめ。</p>
+      <p class="updated" id="updated">読み込み中…</p>
+    </div>
+    <nav class="wrap filters" aria-label="媒体で絞り込み">
+      <button class="chip is-on" data-filter="all">すべて <b id="count-all">0</b></button>
+      <button class="chip" data-filter="x">X <b id="count-x">0</b></button>
+      <button class="chip" data-filter="youtube">YouTube <b id="count-youtube">0</b></button>
+      <button class="chip" data-filter="tiktok">TikTok <b id="count-tiktok">0</b></button>
+      <button class="chip" data-filter="instagram">Instagram <b id="count-instagram">0</b></button>
+      <label class="sort">並び順
+        <select id="sort">
+          <option value="new">新しい順</option>
+          <option value="views">再生・反応が多い順</option>
+        </select>
+      </label>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div id="grid" class="grid" aria-live="polite"></div>
+    <p id="empty" class="empty" hidden>この媒体の投稿はまだありません。</p>
+  </main>
+
+  <footer class="wrap foot">
+    <p>各投稿の著作権は投稿者に帰属します。表示は各サービス公式の埋め込み機能を使っています。</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
