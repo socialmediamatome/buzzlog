@@ -1,0 +1,51 @@
+name: フィード更新と公開
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # 3時間ごと（UTC）
+  push:
+    branches: [main]
+    paths: ["data/manual.json", "index.html", "styles.css", "app.js", "scripts/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: フィードを作る
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_REGION: JP
+          YOUTUBE_MAX: 20
+        run: node scripts/build-feed.mjs
+      - name: 公開用ファイルをまとめる
+        run: |
+          mkdir -p _site/data
+          cp index.html styles.css app.js _site/
+          cp data/feed.json _site/data/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
